@@ -13,11 +13,16 @@ def balance_inquiry(client):
 
 def deposit(client, amount):
     client[1] = client[1] + amount
-    return f"New balance {client[1]}"
+    return client[1]
 
 
-def withdraw(w, amount):
-    pass
+def withdraw(client, amount):
+    if client[1] >= amount:
+        client[1] = client[1] - amount
+        return client[1]
+    else:
+        print("there is no enough money")
+        return
 
 
 def account_summary(account_id):
@@ -26,4 +31,7 @@ def account_summary(account_id):
 
 person1 = create_account()
 print(balance_inquiry(person1))
-print(deposit(person1,1200))
+person1[1] = deposit(person1, 1000)
+print(balance_inquiry(person1))
+withdraw(person1,10000)
+print(balance_inquiry(person1))
