@@ -25,8 +25,8 @@ def withdraw(client, amount):
         return
 
 
-def account_summary(account_id):
-    pass
+def account_summary(client):
+    print(f"The client {client[0]} have a balance of {client[1]}")
 
 
 person1 = create_account()
@@ -35,3 +35,4 @@ person1[1] = deposit(person1, 1000)
 print(balance_inquiry(person1))
 withdraw(person1,10000)
 print(balance_inquiry(person1))
+account_summary(person1)
