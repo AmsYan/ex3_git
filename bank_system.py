@@ -4,15 +4,16 @@ import random
 def create_account():
     account_id = random.randint(0, 999)
     balance = random.randint(0, 99999)
-    return (account_id, balance)
+    return [account_id, balance]
 
 
 def balance_inquiry(client):
     return client[1]
 
 
-def deposit(d, amount):
-    pass
+def deposit(client, amount):
+    client[1] = client[1] + amount
+    return f"New balance {client[1]}"
 
 
 def withdraw(w, amount):
@@ -25,3 +26,4 @@ def account_summary(account_id):
 
 person1 = create_account()
 print(balance_inquiry(person1))
+print(deposit(person1,1200))
