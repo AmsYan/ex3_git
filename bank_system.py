@@ -7,12 +7,8 @@ def create_account():
     return (account_id, balance)
 
 
-def check_balance(client):
+def balance_inquiry(client):
     return client[1]
-
-
-def balance_inquiry():
-    pass
 
 
 def deposit(d, amount):
@@ -28,4 +24,4 @@ def account_summary(account_id):
 
 
 person1 = create_account()
-print(check_balance(person1))
+print(balance_inquiry(person1))
